@@ -13,14 +13,16 @@
 function handleHover() {
     //listen for hover on all class cell
     //switch up class to the current item
-    $('.cell').one('mouseover', function() {
+    $('.grid').on('mouseover', '.cell', function() {
         $(this).addClass('active');
     });
 
 }
 
-function handleReDraw() {
-    $('controls').on('click', createAndPlaceRows(n));
+function handleReDraw(n) {
+    $('button').on('click', function(event) {
+        createAndPlaceRows(n);
+    });
 
 }
 
